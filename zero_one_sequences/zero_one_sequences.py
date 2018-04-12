@@ -8,9 +8,9 @@ def main():
     branches = 1
     for char in stdin.readline():
         if char == '?': 
-            total       = ( (total<<1) % M + ones) % M
-            ones        = ( (ones<<1) % M + branches) % M
-            branches    = (branches<<1) % M
+            total       = ( (total*2) % M + ones) % M
+            ones        = ( (ones*2) % M + branches) % M
+            branches    = (branches*2) % M
         elif char == '0':
             total = ( total + ones   ) % M
         else:
