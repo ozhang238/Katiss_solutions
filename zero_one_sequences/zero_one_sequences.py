@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import sys
-import re
-import os
+
 
 #You are given a sequence, in the form of a string with characters ‘0’, ‘1’, and ‘?’ only.
 #  Suppose there are k ‘?’s. Then there are 2k ways to replace each ‘?’ by a ‘0’ or a ‘1’, giving 2k different 
@@ -40,10 +39,10 @@ def count(full_count,one_count, s):
             return  full_count
 
 def main():
-    #for line in sys.stdin:
-    #    print ( count( 0,0,line  ) % 1000000007 )
+    
+    #for s in sys.stdin:
     for s in ("10110","???","?0?"):
-        print(s,":\t",count(0,0,s) % 1000000007)
+        print ( count( 0,0,s  ) % 1000000007 )
 
 if __name__ == "__main__":
     main()
