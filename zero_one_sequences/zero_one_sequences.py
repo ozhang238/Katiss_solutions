@@ -22,26 +22,21 @@ import sys
 
 #this version of count is SUPER SLOW GOD DAMN IT
 def count(full_count,one_count, s):
-    if ( s[0] == '?'):
-        if ( len(s)>1):
+    if (len(s) == 0):
+        return full_count
+    else:
+        if ( s[0] == '?'):
             return count(full_count+one_count,one_count, s[1:]) +  count(full_count, one_count+1, s[1:])
-        else:
-            return  full_count + full_count + one_count
-    elif ( s[0] == '0'):
-        if ( len(s)>1):
+        elif ( s[0] == '0'):
             return  count(full_count+one_count, one_count, s[1:])
         else:
-            return  full_count+one_count
-    else:
-        if ( len(s)>1 ):
             return  count(full_count,one_count+1,s[1:])
-        else:
-            return  full_count
+
 
 def main():
     
     #for s in sys.stdin:
-    for s in ("10110","???","?0?"):
+    for s in ("11010","???","?0?"):
         print ( count( 0,0,s  ) % 1000000007 )
 
 if __name__ == "__main__":
